@@ -3,14 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.LoginPageTest">
+      <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
+          <include name="VerifyCongmentoLogoTest"/>
+          <include name="VerifyTestCRMTest"/>
+          <include name="VerifyclickOnContactsLinkTest"/>
           <include name="afterMethod"/>
+          <include name="GetHomePageTitleTest"/>
           <include name="Setup"/>
-          <include name="LoginTest"/>
-          <include name="CRMTitleTest"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
+      </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [E2E Test Automation Test Suite]">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListner.ExtentReporerNG"/>
-  </listeners>
-  <test thread-count="5" name="E2E Test Cases(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.LoginPageTest">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="Setup"/>
-          <include name="LoginTest"/>
-          <include name="CRMTitleTest"/>
-        </methods>
-      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
       <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
+          <include name="VerifyCongmentoLogoTest"/>
+          <include name="VerifyTestCRMTest"/>
+          <include name="VerifyclickOnContactsLinkTest"/>
           <include name="afterMethod"/>
           <include name="GetHomePageTitleTest"/>
           <include name="Setup"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>
-  </test> <!-- E2E Test Cases(failed) -->
-</suite> <!-- Failed suite [E2E Test Automation Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

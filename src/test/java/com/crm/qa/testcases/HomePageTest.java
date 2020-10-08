@@ -8,6 +8,7 @@ import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 
 import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
@@ -32,30 +33,43 @@ public class HomePageTest extends Base {
 	}
 
 	@Test(priority = 1)
+	public void EmptyEmailandPassword(){
+
+		
+		login = new LoginPage();
+		homePage = login.CRMLogin(prop.getProperty("Email"), prop.getProperty("Password"));
+		String actualerror=driver.findElement(By.xpath("//p[contains(text(),'Invalid request')]")).getText();
+		String expectederror="Invalid request";
+		
+		Assert.assertEquals(actualerror, expectederror, "Please check your Email Filed");
+
+	}
+	
+	@Test(priority = 2)
 	public void GetHomePageTitleTest() {
 
 		String actual = homePage.VerifyHomeTitle();
 		String expected = "Cogmento CR";
-		Assert.assertEquals(actual, expected, "Home page title not matched..!!"); // message will be call only for
+		Assert.assertEquals(actual, expected, "Home page title not matched!!"); // message will be call only for
 																					// failed cases.
 		System.out.println(homePage.VerifyHomeTitle());
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 3)
 	public void VerifyCongmentoLogoTest() {
 
 		boolean flag = homePage.VerifyCongmentoLogo();
 		Assert.assertTrue(flag);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void VerifyTestCRMTest() {
 
 		boolean flag = homePage.VerifyTestCRM();
 		Assert.assertTrue(flag);
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void VerifyclickOnContactsLinkTest() {
 		contactPage = homePage.clickOnContactsLink();
 	}
